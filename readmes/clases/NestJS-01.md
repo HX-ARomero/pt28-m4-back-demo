@@ -336,7 +336,7 @@ Ejemplo Práctico
   - **Necesidad de un diseño específico**. Necesita que la aplicación esté construida de modo que soporte escalabilidad vertical, lo que puede requerir modificaciones en el diseño original.
   - **Opción menos económica**. Aunque más potente y de mejor rendimiento, suele ser una opción menos económica, ya que requiere de varios servidores.
 
-<img src="./assets/01-01.png" alt="Escalabilidad">
+<img src="../assets/01-01.png" alt="Escalabilidad">
 
 ## Nest JS
 

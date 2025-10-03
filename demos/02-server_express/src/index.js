@@ -40,6 +40,7 @@ const personajes = [
 // Middleware simple de logger:
 app.use((req, res, next) => {
   console.log(`${req.method} ${req.path} [${new Date().toISOString()}]`);
+  console.log(req);
   next();
 });
 // Middleware para poder interpretar JSON por Body;

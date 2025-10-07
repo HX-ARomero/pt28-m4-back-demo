@@ -3,7 +3,7 @@
 ## Resumenes de Clases
 
 - [01- Backend Architecture](./readmes/clases/NestJS-01.md)
-- [02- NestJS Fundamentals I]()
+- [02- NestJS Fundamentals I](./readmes/clases/NestJS-02.md)
 - [03- NestJS Fundamentals II]()
 - [04- NestJS Routing]()
 - [05- NestJS & TypeORM]()
@@ -14,6 +14,10 @@
 - [10- NestJS Testing]()
 - [11- Open API / Documentation]()
 - [12- Docker]()
+
+## JavaScript
+
+- [Teoría y Práctica de JavaScript](./readmes/javascript/JavaScript.md)
 
 ## TypeScript
 

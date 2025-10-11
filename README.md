@@ -7,7 +7,7 @@
 - [03- NestJS Fundamentals II](./readmes/clases/NestJS-03.md)
   - [Decoradores](./readmes/clases/NestJS-03-Decoradores.md)
   - [Providers](./readmes/clases/NestJS-03-Providers.md)
-  - [Principios SOLID con ejemplos](./readmes/clases/NestJS-03-SOLID.md.md)
+  - [Principios SOLID con ejemplos](./readmes/clases/NestJS-03-SOLID.md)
 - [04- NestJS Routing](./readmes/clases/NestJS-04.md)
 - [05- NestJS & TypeORM]()
 - [06- NestJS Pipes]()

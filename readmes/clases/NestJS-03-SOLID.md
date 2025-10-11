@@ -1,141 +1,223 @@
-# Nest JS - Nest JS Routing
+# Principios SOLID
 
 [Volver a Inicio](../../README.md)
 
-## 🎯Obtener información desde el Request
+👉 Single Responsibility Principle (S) - Principio de Responsabilidad Única
 
-En NestJS, obtener parámetros de ruta, query parameters y el body de una solicitud es sencillo gracias a los decoradores que permiten acceder a estos datos dentro de los métodos de un controlador.
+👉 Open-Closed Principle (O) - Principio de Abierto/Cerrado
 
-### 1. Obtener Parámetros de Ruta (Params):
+👉 Liskov Substitution Principle (L) - Principio de Sustitución de Liskov
 
-Para acceder a los parámetros que forman parte de la URL, como en /users/:id, se usa el decorador @Param().
+👉 Interface Segregation Principle (I) - Principio de Segregación de la Interfaz
 
-Ejemplo:
+👉 Dependency Inversion Principle (D) - Principio de Inversión de Dependencias
 
-```ts
-@Get(':id')
-getUserById(@Param('id') id: string) {
-  return `User with ID: ${id}`;
+## (S) - Principio de responsabilidad única
+
+> Cada clase o función debe tener una única responsabilidad. Esto simplifica la comprensión, el mantenimiento y la modificación del código en el futuro.
+
+Podemos imaginarnos el caos de un equipo de fútbol donde cada jugador no cumple un rol, ni tiene un lugar específico dentro de la cancha.
+
+Veámoslo en un ejemplo simple: La siguiente función calcula el área de un rectángulo y muestra el resultado:
+
+```js
+function calculateArea(a, b) {
+  const result = a * b;
+  console.log(`El resultado es ${result}`);
+  return result;
+}
+
+calculateArea(2, 4);
+```
+
+Refactorizando para aplicar este principio lograremos un código que facilita su comprensión y mantenimiento.
+
+```js
+function printMessage(message, result) {
+  console.log(message, result);
+}
+
+calculateArea(2, 4);
+function calculateArea(a, b) {
+  return a * b;
+}
+
+printMessage('El resultado es', calculateArea(2, 4));
+```
+
+## (O) - Principio de abierto-cerrado
+
+> Las entidades de software (clases, módulos, funciones, etc.) deben estar abiertas para su extensión, pero cerradas para su modificación.
+
+Un ejemplo en código:
+
+```js
+class Ingredients {
+  products = ['Tomate', 'Lechuga', 'Aceite'];
+
+  getIngredients() {
+    return this.productos;
+  }
 }
 ```
 
-El valor de :id será capturado y accesible mediante el decorador @Param('id').
+Si quisiéramos añadirle la posibilidad de ingresar un nuevo ingrediente sin modificar la funcionalidad previa (reapetando así el principio) haríamos lo siguiente:
 
-### 2. Obtener Query Parameters:
+```js
+class Ingredients {
+  products = ['Tomate', 'Lechuga', 'Aceite'];
 
-Los query parameters son valores que se pasan en la URL después del signo de interrogación ?, como en /users?age=25. Para acceder a ellos, se usa el decorador @Query().
+  getIngredients() {
+    return this.productos;
+  }
 
-Ejemplo:
-
-```ts
-@Get()
-getUsers(@Query('age') age: string) {
-return `Users with age: ${age}`;
+  addIngredient(product) {
+    this.products.push(product);
+  }
 }
 ```
 
-Si la URL es /users?age=25, el valor de age será accesible mediante @Query('age').
-También se pueden obtener todos los query parameters de una sola vez:
+## (L) - Principio de Sustitución de Liskov
 
-```ts
-@Get()
-getUsers(@Query() query: any) {
-  return `Query params: ${JSON.stringify(query)}`;
+> Los objetos de una superclase deben ser reemplazables por objetos de una subclase sin afectar la corrección del programa.
+
+Por ejemplo en el manejo de errores ante una petición HTTP:
+
+```js
+function getCharacters(url, errorHandler) {
+    axios(url)
+        .then({ data } => data.json())
+        .catch(error => errorHandler(error))
+    }
+
+const internalErrorHandler = function handle(error) {
+    console.log(error);
+};
+
+const externalErrorHandler = function handle(error) {
+    sendErrorToExternalService(error);
+};
+
+getCharacter(url, internalErrorHandler);
+getCharacter(url, externalErrorHandler);
+```
+
+> Utilizando el principio de Liskov, podemos tener varias funciones que manejan el error, y al momento de ejecutar una petición HTTP manejar su error con cualquiera de ellas.
+> Es mejor tener interfaces específicas, en lugar de una sola interfaz general. Y esto aplica también a las funciones en JavaScript.
+
+## (I) principio de segregación de la interfaz
+
+> Una clase debe implementar únicamente las interfaces o métodos que necesita, es decir, no debe tenrer métodos que no utilice.
+
+En el siguiente ejemplo, la clase padre posee métodos que no necesariamente se utilizan.
+
+```js
+class Book {
+  constructor() {
+    /* ----- */
+  }
+
+  getAuthor() {
+    /* ----- */
+  }
+  getStock() {
+    /* ----- */
+  }
+  getURL() {
+    /* ----- */
+  }
+}
+
+class PhysicalBook extends Book {
+  constructor() {
+    super();
+  }
+}
+
+class DigitalBook extends Book {
+  constructor() {
+    super();
+  }
 }
 ```
 
-Esto capturará todos los query parameters en un objeto.
+Refactorizando podemos cumplir con el principio de segregación de la interfaz, donde cada clase sólo tiene los métodos que utiliza:
 
-### 3. Obtener el Body de la Solicitud:
+```js
+class Book {
+  constructor() {
+    /* ----- */
+  }
 
-Para acceder al cuerpo de una solicitud en métodos POST, PUT o PATCH, se usa el decorador @Body().
+  getAuthor() {
+    /* ----- */
+  }
+}
 
-Ejemplo:
+class PhysicalBook extends Book {
+  constructor() {
+    super();
+  }
+  getStock() {
+    /* ----- */
+  }
+}
 
-```ts
-@Post()
-createUser(@Body() createUserDto: CreateUserDto) {
-  return `User created with data: ${JSON.stringify(createUserDto)}`;
+class DigitalBook extends Book {
+  constructor() {
+    super();
+  }
+  getURL() {
+    /* ----- */
+  }
 }
 ```
 
-El decorador @Body() permite acceder al cuerpo de la solicitud. Se suele utilizar junto con DTOs (Data Transfer Objects) para definir y validar la estructura de los datos esperados.
-Si solo quieres obtener una propiedad específica del cuerpo:
+## (D) - Principio de inversión de dependencia
 
-```ts
-@Post()
-createUser(@Body('name') name: string) {
-  return `User created with name: ${name}`;
+> En este principio se establecen que las dependencias deben de estar en las abstracciones y no en las concreciones, en otras palabras, nos piden que las clases nunca dependan de otras clases y que toda esta relación debe estar en una abstracción. Este principio tiene dos reglas:
+>
+> 1. Los módulos de alto nivel no deben de depender de módulos de bajo nivel. Esta lógica debe de estar en una abstracción.
+> 2. Las abstracciones no deben de depender de detalles. Los detalles deberían depender de abstracciones.
+
+Por ejemplo al necesitar conectarnos a una base de datos para cambiar el password no debemos depender directamente de la conexión general, sino que debemos recibir una instancia de una clase que implemente una interfaz común de conexión.
+
+```js
+class DBConnection {
+  connect() {
+    /* ----- */
+  }
+}
+
+class ChangePassword {
+  constructor() {
+    this.newConnection = new DBConnection();
+  }
 }
 ```
 
-### 4. Acceso combinado:
+Refactorizando, cumplimos con el principio de inversión de dependencia:
 
-Es común acceder a múltiples fuentes de datos en una misma ruta. NestJS permite combinar decoradores como @Param(), @Query() y @Body() en un mismo método.
+```js
+class DBConnection {
+  connect() {
+    /* ----- */
+  }
+}
 
-Ejemplo:
+class PostgreSQLConnection {
+  connect {
+    /* ----- */
+  }
+}
 
-```ts
-@Post(':id')
-updateUser(
-  @Param('id') id: string,
-  @Query('status') status: string,
-  @Body() updateUserDto: UpdateUserDto
-) {
-  return `User with ID: ${id}, status: ${status}, updated with data: ${JSON.stringify(updateUserDto)}`;
+class ChangePassword {
+  constructor(connection) {
+    this.newConnection = connection
+  }
 }
 ```
 
-Resumen rápido:
-@Param(): Obtiene los parámetros de la URL (ruta).
-@Query(): Accede a los parámetros de consulta (query parameters).
-@Body(): Captura el cuerpo de la solicitud.
-Se pueden combinar estos decoradores en un mismo método para manejar diferentes partes de la solicitud.
-NestJS facilita el manejo de estas entradas de la solicitud de manera sencilla y tipada.
-
-## 🎯Guardianes (Guards)
-
-Propósito:
-
-- Los Guardianes en NestJS se utilizan para controlar el acceso a las rutas, es decir, para implementar lógica de autorización. Los guardianes determinan si una solicitud debe ser manejada por la ruta correspondiente o no.
-
-Cómo funcionan:
-
-- Se ejecutan antes de que el controlador maneje la solicitud.
-  Retornan un booleano (true para permitir el acceso, false para denegarlo) o una Promesa que resuelve a un booleano.
-
-## 🎯Interceptores
-
-Propósito:
-
-- Los Interceptores en NestJS permiten modificar o extender el comportamiento de las solicitudes y respuestas. Se pueden utilizar para una variedad de tareas como el manejo de logging, transformación de datos, y manipulación de errores.
-
-Cómo funcionan:
-
-- Se ejecutan antes y después del método del controlador.
-  Pueden modificar los datos de la solicitud y la respuesta.
-  Se pueden usar para envolver la lógica del controlador y agregar lógica adicional.
-
-## Diferencias clave entre Guardianes e Interceptores
-
-Propósito:
-
-- Guardianes: Se utilizan para control de acceso y lógica de autorización.
-- Interceptores: Se utilizan para manipular y transformar datos antes de que se envíen al cliente o después de que se reciban del cliente.
-
-Momento de ejecución:
-
-- Guardianes: Se ejecutan antes de que el controlador maneje la solicitud.
-- Interceptores: Se ejecutan tanto antes como después de la ejecución del método del controlador.
-
-Modificación de datos:
-
-- Guardianes: No modifican los datos de la solicitud o la respuesta.
-- Interceptores: Pueden modificar los datos de la solicitud y la respuesta.
-
-Resultado:
-
-- Guardianes: Retornan un booleano que determina si se permite el acceso.
-- Interceptores: Retornan un Observable que permite transformar los datos antes de enviarlos al controlador o al cliente.
+> No debemos olvidar que las reglas SOLID son una herramienta útil, pero no debemos aplicarlas en todos los casos. Lo ideal es conocerlas, y aplicarlas cuando el problema lo requiera.
 
 [Volver a Inicio](../../README.md)

@@ -7,7 +7,7 @@
 - [03- NestJS Fundamentals II](./readmes/clases/NestJS-03.md)
   - [Decoradores](./readmes/clases/NestJS-03-Decoradores.md)
   - [Providers](./readmes/clases/NestJS-03-Providers.md)
-  - [Principios SOLID con ejemplos](./readmes/clases/NestJS-03-SOLID.md)
+  - [Principios SOLID con ejemplos](./readmes/javascript/SOLID.md)
 - [04- NestJS Routing](./readmes/clases/NestJS-04.md)
 - [05- NestJS & TypeORM]()
 - [06- NestJS Pipes]()
@@ -52,3 +52,6 @@
   - [Club de Mecanografía](https://www-typingclub-com.translate.goog/?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=tc)
 - Técnicas de estudio
   - [Técnicas de Estudio](./readmes/tecnicasEstudio.md)
+- SOLID y Buenas Prácticas
+  - [Principios SOLID con ejemplos](./readmes/javascript/SOLID.md)
+  - [Resumen con ejemplos de Buenas Prácticas](./readmes/javascript/BuenasPracticas.md)

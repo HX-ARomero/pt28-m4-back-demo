@@ -97,24 +97,34 @@ NestJS facilita el manejo de estas entradas de la solicitud de manera sencilla y
 
 Propósito:
 
-- Los Guardianes en NestJS se utilizan para controlar el acceso a las rutas, es decir, para implementar lógica de autorización. Los guardianes determinan si una solicitud debe ser manejada por la ruta correspondiente o no.
+- Los Guardianes en NestJS se utilizan para controlar el acceso a las rutas. Implementan lógica de autenticación o autorización, determinando si una solicitud puede continuar hacia el controlador o no.
 
 Cómo funcionan:
 
 - Se ejecutan antes de que el controlador maneje la solicitud.
-  Retornan un booleano (true para permitir el acceso, false para denegarlo) o una Promesa que resuelve a un booleano.
+- Devuelven un booleano (true permite el acceso, false lo deniega) o una Promesa/Observable que resuelve en booleano.
+- Se implementan a través del método canActivate() de la interfaz CanActivate.
 
 ## 🎯Interceptores
 
 Propósito:
 
-- Los Interceptores en NestJS permiten modificar o extender el comportamiento de las solicitudes y respuestas. Se pueden utilizar para una variedad de tareas como el manejo de logging, transformación de datos, y manipulación de errores.
+- Los Interceptores en NestJS permiten modificar o extender el comportamiento de las solicitudes y respuestas.
+
+Se usan para tareas como:
+
+- Logging y medición de rendimiento.
+- Transformación de datos de respuesta.
+- Manejo centralizado de errores.
+- Cacheo o formateo de respuestas.
 
 Cómo funcionan:
 
 - Se ejecutan antes y después del método del controlador.
-  Pueden modificar los datos de la solicitud y la respuesta.
-  Se pueden usar para envolver la lógica del controlador y agregar lógica adicional.
+- Pueden:
+  - Modificar los datos entrantes o salientes.
+  - Envolver la lógica del controlador.
+  - Transformar la respuesta usando RxJS (Observable).
 
 ## Diferencias clave entre Guardianes e Interceptores
 

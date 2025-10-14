@@ -1,6 +1,6 @@
 # Principios SOLID
 
-[Volver a Inicio](../../README.md)
+[Volver](./JavaScript.md)
 
 👉 Single Responsibility Principle (S) - Principio de Responsabilidad Única
 
@@ -220,4 +220,4 @@ class ChangePassword {
 
 > No debemos olvidar que las reglas SOLID son una herramienta útil, pero no debemos aplicarlas en todos los casos. Lo ideal es conocerlas, y aplicarlas cuando el problema lo requiera.
 
-[Volver a Inicio](../../README.md)
+[Volver](./JavaScript.md)

@@ -9,7 +9,7 @@
   - [Providers](./readmes/clases/NestJS-03-Providers.md)
   - [Principios SOLID con ejemplos](./readmes/javascript/SOLID.md)
 - [04- NestJS Routing](./readmes/clases/NestJS-04.md)
-- [05- NestJS & TypeORM]()
+- [05- NestJS & TypeORM](./readmes/clases/NestJS-05.md)
 - [06- NestJS Pipes]()
 - [07- NestJS File Upload]()
 - [08- Autenticación I]()
@@ -17,6 +17,10 @@
 - [10- NestJS Testing]()
 - [11- Open API / Documentation]()
 - [12- Docker]()
+
+## Hábitos Sauludables
+
+- [Buenas Prácticas de Programación y Bienestar](./readmes/HabitosSaludables.md)
 
 ## JavaScript
 

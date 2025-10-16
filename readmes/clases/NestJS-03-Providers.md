@@ -254,7 +254,7 @@ export class AppService {
 
 ---
 
-## 6. 🛠️ UN EJEMOLO
+## 6. 🛠️ UN EJEMPLO
 
 ### 🎯 Objetivo
 

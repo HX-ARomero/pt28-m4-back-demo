@@ -20,5 +20,6 @@
 ## Conceptos Importantes
 
 - [Parámetros y Argumentos](./Parametros_Argumentos.md)
+- [Parámetros Inteligentes](./ParametrosInteligentes.md)
 
 [Volver a Inicio](../../README.md)

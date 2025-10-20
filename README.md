@@ -10,7 +10,7 @@
   - [Principios SOLID con ejemplos](./readmes/javascript/SOLID.md)
 - [04- NestJS Routing](./readmes/clases/NestJS-04.md)
 - [05- NestJS & TypeORM](./readmes/clases/NestJS-05.md)
-- [06- NestJS Pipes]()
+- [06- NestJS Pipes](./readmes/clases/NestJS-06.md)
 - [07- NestJS File Upload]()
 - [08- Autenticación I]()
 - [09- Autenticación II]()

@@ -4,8 +4,8 @@
 
 ## Links
 
-- [Class Validator - Documentación](https://www.npmjs.com/package/class-validator)
 - [Class Transformer - Documentación](https://www.npmjs.com/package/class-transformer)
+- [Class Validator - Documentación](https://www.npmjs.com/package/class-validator)
 - [NestJS Exception-Filters](https://docs.nestjs.com/exception-filters)
 
 ## Guardianes, Interceptores y Pipes
@@ -46,7 +46,7 @@ npm install class-validator class-transformer
 - Transforma el body (que llega como objeto literal) en una instancia real de tu clase DTO.
 - Permite ocultar o cambiar nombres de propiedades al serializar/deserializar.
 
-## Exception Filtars Preconstruídos
+## Exception Filters Preconstruídos
 
 | EXCEPTION                          | STATUS CODE                    |
 | ---------------------------------- | ------------------------------ |

@@ -14,7 +14,10 @@
 - [07- NestJS File Upload](./readmes/clases/NestJS-07.md)
 - [08- Autenticación I](./readmes/clases/NestJS-08.md)
 - [09- Autenticación II](./readmes/clases/NestJS-09.md)
-- [10- NestJS Testing]()
+- 10- NestJS Testing
+  - [Ciclo de Vida del Software](./readmes/clases/NestJS-10-Software.md)
+  - [Testing](./readmes/clases/NestJS-10-Testing.md)
+  - [Secuencia de inicio de una aplicación NestJS](./readmes/clases/NestJS-10-NestJS.md)
 - [11- Open API / Documentation]()
 - [12- Docker]()
 

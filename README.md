@@ -19,7 +19,9 @@
   - [Testing](./readmes/clases/NestJS-10-Testing.md)
   - [Secuencia de inicio de una aplicación NestJS](./readmes/clases/NestJS-10-NestJS.md)
 - [11- Open API / Documentation](./readmes/clases/NestJS-11.md)
-- [12- Docker]()
+- [12- Docker](./readmes/clases/NestJS-12.md)
+  - [Datos Curiosos sobre la Programación](./readmes/javascript/DatosCuriosos.md)
+  - [npkill - Elimninar "node_modules"](./readmes/javascript/npkill.md)
 
 ## Hábitos Sauludables
 

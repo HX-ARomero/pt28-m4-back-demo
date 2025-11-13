@@ -22,6 +22,8 @@
 - [12- Docker](./readmes/clases/NestJS-12.md)
   - [Datos Curiosos sobre la Programación](./readmes/javascript/DatosCuriosos.md)
   - [npkill - Elimninar "node_modules"](./readmes/javascript/npkill.md)
+- [Repaso](./readmes/clases/Repaso.md)
+  - [Regalos de fin de Módulo](./readmes/Regalos.md)
 
 ## Hábitos Sauludables
 

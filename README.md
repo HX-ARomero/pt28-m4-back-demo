@@ -1,5 +1,7 @@
 # Cohorte PT28 - Módulo 4 Especialidad Backend 💾
 
+- [Simulacro de Choice](SimulacroChoice.md)
+
 ## Resumenes de Clases
 
 - [01- Backend Architecture](./readmes/clases/NestJS-01.md)

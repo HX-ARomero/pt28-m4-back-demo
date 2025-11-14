@@ -1,6 +1,6 @@
 # 🎉🎉🎉 REGALOS: FIN DEL MÓDULO ¡¡¡FELICIDADES EQUIPO!!! 🎉🎉🎉
 
-[Volver a inicio](../../README.md)
+[Volver a inicio](../README.md)
 
 - [Gestión de tiempo - Cuadrantes de Covey](https://lamenteesmaravillosa.com/los-4-cuadrantes-de-stephen-covey-para-gestionar-el-tiempo/)
 - [FODA: Fortalezas/Oportunidades Debilidades/Amenazas](foda.md)
@@ -23,3 +23,5 @@
 
 ---
 ## ÉXITOS 💛💛💛
+
+[Volver a inicio](../README.md)
